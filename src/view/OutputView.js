@@ -3,7 +3,7 @@ const { USER_PRICE_MESSAGES } = require("../constants/Messages");
 
 const OutputView = {
   printError(errorLog) {
-    Console.print(errorLog);
+    Console.print(errorLog.message);
   },
 
   printUserPurchasedLotto(userPurchasedLotto) {

@@ -20,6 +20,10 @@ class MainController {
     this.#LottoGameController.processTargetLottoInput(targetLottoInput);
   }
 
+  printError(errorLog) {
+    OutputView.printError(errorLog);
+  }
+
   printUserPurchasedLotto(userPurchasedLotto) {
     OutputView.printUserPurchasedLotto(userPurchasedLotto);
   }
