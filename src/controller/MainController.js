@@ -1,6 +1,7 @@
 const LottoGameController = require("./LottoGameController");
 const UserController = require("./UserController");
 const InputView = require("../view/InputView");
+const OutputView = require("../view/OutputView");
 
 class MainController {
   #LottoGameController;
@@ -13,6 +14,10 @@ class MainController {
 
   processUserPriceInput(userInputPrice) {
     this.#UserController.processUserInput(+userInputPrice);
+  }
+
+  printUserPurchasedLotto(userPurchasedLotto) {
+    OutputView.printUserPurchasedLotto(userPurchasedLotto);
   }
 
   initializeGame() {
