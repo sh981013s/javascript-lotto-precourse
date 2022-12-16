@@ -1,4 +1,5 @@
 const UserModel = require("../model/UserModel");
+const PriceInputValidation = require("../validation/PriceInputValidation");
 
 class UserController {
   #mainController;
@@ -9,11 +10,20 @@ class UserController {
     this.#UserModel = new UserModel();
   }
 
-  processUserInput(userPriceInput) {
-    this.#UserModel.generateLottos(userPriceInput);
-    const userPurchasedLotto = this.#UserModel.getUserPurchasedLotto();
+  processUserPurchasedLotto(userPurchasedLotto) {
     this.#mainController.printUserPurchasedLotto(userPurchasedLotto);
     this.#mainController.readTargetLotto();
+  }
+
+  processUserInput(userPriceInput) {
+    try {
+      PriceInputValidation.validate(userPriceInput);
+      this.#UserModel.generateUserPurchasedLotto(userPriceInput);
+      const userPurchasedLotto = this.#UserModel.getUserPurchasedLotto();
+      this.processUserPurchasedLotto(userPurchasedLotto);
+    } catch (errorLog) {
+      this.#mainController.printError(errorLog);
+    }
   }
 }
 
