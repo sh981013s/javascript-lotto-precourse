@@ -12,7 +12,7 @@ class MainController {
   }
 
   processUserPriceInput(userInputPrice) {
-    this.#UserController.processUserInput(userInputPrice);
+    this.#UserController.processUserInput(+userInputPrice);
   }
 
   initializeGame() {
