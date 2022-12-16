@@ -16,8 +16,16 @@ class MainController {
     this.#UserController.processUserInput(+userInputPrice);
   }
 
+  processTargetLottoInput(targetLottoInput) {
+    this.#LottoGameController.processTargetLottoInput(targetLottoInput);
+  }
+
   printUserPurchasedLotto(userPurchasedLotto) {
     OutputView.printUserPurchasedLotto(userPurchasedLotto);
+  }
+
+  readTargetLotto() {
+    InputView.readTargetLotto(this.processTargetLottoInput.bind(this));
   }
 
   initializeGame() {
