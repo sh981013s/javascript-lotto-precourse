@@ -86,7 +86,6 @@
       "error",
       "beside"
     ],
-    "no-useless-constructor": "error",
     "no-dupe-class-members": "error",
     "class-methods-use-this": "off",
     "no-duplicate-imports": "error",
@@ -129,12 +128,6 @@
       "never"
     ],
     "no-multi-assign": "error",
-    "no-plusplus": [
-      "error",
-      {
-        "allowForLoopAfterthoughts": true
-      }
-    ],
     "eqeqeq": [
       "error",
       "always",
@@ -355,13 +348,9 @@
       2
     ],
     "max-lines-per-function": ["error", 10],
-    "nonblock-statement-body-position": [
-      "error",
-      "beside",
-      { "overrides": { "while": "below", "for": "below", "if": "below" } }
-    ],
     "operator-linebreak": "off",
     "nonblock-statement-body-position": "off",
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "no-useless-constructor": "off"
   }
 }
