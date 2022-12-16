@@ -4,4 +4,9 @@ const USER_PRICE_MESSAGES = Object.freeze({
   LottoNumber: "개를 구매했습니다.",
 });
 
-module.exports = { USER_PRICE_MESSAGES };
+const USER_TARGET_MESSAGES = Object.freeze({
+  INPUT: "\n당첨 번호를 입력해 주세요.\n",
+  ERROR: "[ERROR] 콤마(,)로 구분된 6개의 숫자이어야 합니다.",
+});
+
+module.exports = { USER_PRICE_MESSAGES, USER_TARGET_MESSAGES };

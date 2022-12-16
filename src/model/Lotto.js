@@ -1,3 +1,5 @@
+const { USER_TARGET_MESSAGES } = require("../constants/Messages");
+
 class Lotto {
   #numbers;
 
@@ -7,12 +9,15 @@ class Lotto {
   }
 
   validate(numbers) {
-    if (numbers.length !== 6) {
-      throw new Error("[ERROR] 로또 번호는 6개여야 합니다.");
+    if (numbers.length !== 6 || new Set(numbers).size !== 6) {
+      throw new Error(USER_TARGET_MESSAGES.ERROR.message);
+    }
+    for (const singleLottoNumber of numbers) {
+      if (1 > singleLottoNumber || singleLottoNumber > 45) {
+        throw new Error(USER_TARGET_MESSAGES.ERROR.message);
+      }
     }
   }
-
-  // TODO: 추가 기능 구현
 }
 
 module.exports = Lotto;
