@@ -2,7 +2,11 @@ const { Random } = require("@woowacourse/mission-utils");
 
 class LottoGenerator {
   static getGeneratedLotto(userPriceInput) {
-    return Random.pickUniqueNumbersInRange(1, 45, userPriceInput / 1000);
+    const generatedLotto = [];
+    for (let index = 0; index < userPriceInput / 1000; index++) {
+      generatedLotto.push(Random.pickUniqueNumbersInRange(1, 45, 6));
+    }
+    return generatedLotto;
   }
 }
 
