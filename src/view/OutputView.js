@@ -7,7 +7,7 @@ const OutputView = {
   },
 
   printUserPurchasedLotto(userPurchasedLotto) {
-    Console.print(userPurchasedLotto.length + USER_PRICE_MESSAGES.LottoNumber);
+    Console.print(`\n${userPurchasedLotto.length}${USER_PRICE_MESSAGES.LottoNumber}`);
     for (const singleLottoCombination of userPurchasedLotto) {
       Console.print(`[${singleLottoCombination.join(", ")}]`);
     }
