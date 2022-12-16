@@ -10,6 +10,10 @@ class UserModel {
   generateUserPurchasedLotto(userPriceInput) {
     this.#userPurchasedLotto = LottoGenerator.getGeneratedLotto(userPriceInput);
   }
+
+  getUserPurchasedLotto() {
+    return this.#userPurchasedLotto;
+  }
 }
 
 module.exports = UserModel;
